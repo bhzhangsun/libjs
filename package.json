@@ -1,0 +1,22 @@
+{
+  "name": "libjs",
+  "version": "1.0.0",
+  "description": "libjs is a toy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsbh/libjs.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "zsbh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsbh/libjs/issues"
+  },
+  "homepage": "https://github.com/zsbh/libjs#readme"
+}
