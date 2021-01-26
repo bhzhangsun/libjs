@@ -4,10 +4,9 @@ const RESOLVED = 'resolved'
 const REJECTED = 'rejected'
 
 
-class Future {
+export default class Future {
     constructor(fn) {
         const self = this
-        super()
         self.status = PENDING // RESOLVED, REJECTED
         self.data = undefined
         self.onFulfilledCallback = []
@@ -43,8 +42,8 @@ class Future {
     then(onFulfilled, onRejected) {
         const self = this
 
-        onFulfilled = onFulfilled === 'function' ? onFulfilled : function(v) {return v}
-        onRejected = onRejected === 'function' ? onRejected : function(r) {return r}
+        onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : function(v) {return v}
+        onRejected = typeof onRejected === 'function' ? onRejected : function(r) {return r}
 
         if (self.status === PENDING) {
             return new Promise(function(resolve, reject) {
@@ -110,3 +109,4 @@ class Future {
         }
     }
 }
+

@@ -1,3 +1,3 @@
-import Future from './lib/future'
+import Future from './src/future.js'
 
-export default {Future}
+export { Future };
