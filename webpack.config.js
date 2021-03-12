@@ -1,21 +1,24 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     mode: 'production',
-    entry: path.join(__dirname, './index.js'),
+    entry: path.join(__dirname, './src/index.js'),
     output: {
         path: path.join(__dirname, './lib'),
-        filename: "libjs.[hash:6].js"
+        filename: "libjs.js",
+        library: 'libjs',
+        // libraryTarget: 'window'
     },
     module: {
         rules: [{
             test: /\.(js)$/,
-            use: 'babel-loader',
-            exclude: /node_modules/
+            use: 'babel-loader'
         }]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        // new BundleAnalyzerPlugin()
     ]
 }

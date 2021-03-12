@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mocha.css" />
+  </head>
+  <body>
+    <div id="mocha">
+      <ul>
+        <li class="player-btn" id="audio1" data="./assets/birds-sound.wav">音频1</li>
+        <li class="player-btn" id="audio2" data="./assets/monning.mp3">音频2</li>
+        <li class="player-btn" id="audio3" data="./assets/rainning.mp3">音频3</li>
+      </ul>
+      
+    </div>
+    <script src="../../lib/libjs.js"></script>
+    <script src="mocha.js"></script>
+    <script src="./audio-player.browser.js"></script>
+    <script>
+      mocha.setup('bdd');
+    </script>
+    <script src="tests.spec.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+  <style>
+    .player-btn {
+      width: 72px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:cornflowerblue;
+      border-radius: 16px;
+      margin: 0 0 12px 0;
+    }
+  </style>
+</html>

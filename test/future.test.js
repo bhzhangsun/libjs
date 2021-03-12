@@ -1,4 +1,4 @@
-import { Future } from '../index.js'
+import Future from '../src/tools/future.js'
 const assert = require('assert')
 
 describe('feature 单元测试', () => {
