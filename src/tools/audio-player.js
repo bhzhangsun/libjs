@@ -1,17 +1,16 @@
-
 export default class AudioPlayer extends Audio {
     constructor() {
         super();
         this._key = undefined;
-        this._playHandler = function() {};
-        this._pauseHandler = function() {};
+        this._playHandler = function () { };
+        this._pauseHandler = function () { };
     }
 
     functional(fun) {
         if (fun && typeof fun == 'function') {
             return fun
         } else {
-            return function() {}
+            return function () { }
         }
     }
 
@@ -20,7 +19,7 @@ export default class AudioPlayer extends Audio {
     continue(src, playHandler, pauseHandler, key) {
         console.log('current audio:', key, this._key, src, this.src, this.paused);
         if ((key && key == this._key) || src == this.src) { // src不需要更新
-            if(this.paused) { // 暂停时播放
+            if (this.paused) { // 暂停时播放
                 this.play();
                 this._playHandler();
             } else { // 播放时暂停
